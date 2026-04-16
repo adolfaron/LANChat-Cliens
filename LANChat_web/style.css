@@ -1,0 +1,233 @@
+body {
+  font-family: Arial;
+  background: #f0f0f0;
+  padding: 0px;
+}
+#messages {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ccc;
+  overflow-y: auto;
+  padding: 5px;
+  background: white; 
+  border-radius:5px;
+}
+#input {
+  width: 80%;
+  height: 30px;
+  padding: 5px;
+  font-size: 17px;
+  border-radius: 5px;
+}
+#sendBtn {
+  /*padding: 2px;*/
+  width: 15%;
+  margin-right: auto;
+  margin-left: 0;
+  height: 43px;
+  padding: 5px;
+  font-size: 17px;
+  border-radius: 5px;
+}
+#main{
+  display: flex;
+  flex-direction: row;
+}
+#menu {
+  width: 30%;
+  padding: 10px;
+}
+#uzenetek{
+  width: 70%;
+  padding: 10px;
+  height: 70vh;
+}
+#kuldesSor {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  gap: 5px;
+  justify-content: end;
+  position: absolute;
+  bottom: 10px;
+  right: -20px;
+  width: 70%;
+}
+#menu ul {
+  list-style: none;
+  padding: 0;
+}
+#menu li{
+  padding: 10px;
+  background: #ddd;
+  margin-bottom: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+#ujCsevegesBtn{
+  width: 77%;
+  height: 40px;
+  font-size: 17px;
+  border-radius: 5px;
+  display: inline;
+}
+#profilBtn{
+  width: 20%;
+  height: 40px;
+  font-size: 17px;
+  border-radius: 5px;
+  display: inline;
+}
+#szobaNevKiir{
+  font-size: 20px;
+  margin-bottom: 10px;
+  height: 30px;
+  display: inline;
+}
+#tagHozzaadasaBtn{
+  height: 30px;
+  font-size: 14px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  margin-top: 0;
+}
+#szobaFejlec{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+#szobaLetrehozas{
+  padding: 10px;
+}
+.bejReg{
+  display: none; gap: 20px;padding-top: 20px; align-items: center; justify-content: center; width: 100%; height: 100%;
+}
+#bejelentkezes{
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 30%;
+  margin-inline: auto;
+  margin-top: 40px;
+}
+#regisztracio{
+  display: none; flex-direction: column; gap: 10px;width: 30%; margin-inline: auto; margin-top: 40px;
+  justify-content: center;
+  align-items: center;
+}
+#menuBomb, #menubeBomb{
+  display: none;
+}
+#menuBomb:hover, #menubeBomb:hover{
+  cursor: pointer;
+}
+#prof{
+  width: 50%;
+  font-size: 17px;
+  border-radius: 5px;
+}
+#nevKi input{
+  border: none;
+  background-color: #f0f0f0;
+}
+#nevKi input:focus{
+  outline: none;
+}
+#prof button{
+  transition: all 0.3s ease;
+  border-radius: 3px;
+  border: 1px solid #767676;
+}
+#prof button:hover{
+  background-color: #ddd;
+  cursor: pointer;
+}
+#profMent{
+  margin: 10px;
+  width: 100px;
+}
+#kijelentkezes{
+  margin: 10px;
+  width: 200px;
+  height: 40px;
+  background-color: rgb(255, 0, 0);
+  border: 1px solid #767676;
+  border-radius: 3px;
+}
+#prof #kijelentkezes:hover{
+  background-color: rgb(255, 102, 47);
+}
+
+@media screen and (max-width: 940px){
+  #ujCsevegesBtn{
+  width: 72%;
+  }
+  #profilBtn{
+    width: 25%;
+  }
+
+}
+@media screen and (max-width: 767px){
+  .bejReg button{
+    width: 40%;
+    height: 30px;
+  }
+  #bejelentkezes{
+    width: 100%;
+  }
+  #bejelentkezes input{
+    width: 80%;
+    height: 30px;
+  }
+  #bejelentkezes button{
+    height: 30px;
+  }
+  #regisztracio{
+    width: 100%;
+  }
+  #regisztracio input{
+    width: 90%;
+    height: 30px;
+  }
+  #regisztracio button{
+    height: 30px;
+  }
+  #betoltve #menu{
+    display: none;
+  }
+  #betoltve #uzenetek{
+    width: 100%;
+  }
+  #kuldesSor input{
+    width: 75%;
+  }
+  #kuldesSor button{
+    width: 25%;
+  }
+  #kuldesSor{
+    right: 5px;
+    width: 95%;
+  }
+  #menuBomb{
+    display: inline;
+    margin-bottom: 10px;
+  }
+  #menubeBomb{
+    display: block;
+    margin: 10px;
+    margin-bottom: 20px;
+  }  
+  #menu{
+    width: 100%;
+  }
+  #ujCsevegesBtn{
+  width: 83%;
+  }
+  #profilBtn{
+    width: 15%;
+  }
+}

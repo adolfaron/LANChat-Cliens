@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>LANChat Web</title>
+    <link rel="icon" type="image/x-icon" href="logo.png">
+</head>
+<body>
+    <div id="bej/reg" class="bejReg">
+        <button onclick="bejelentkezesBTN_Click()">Bejelentketés</button>
+        <button onclick="regisztralasBTN_Click()">Regisztrálás</button>
+    </div>
+    <div id="betoltve" style="display: none;">
+        <div id="main">
+            <div id="menu">
+                <div id="menubeBomb" onclick="menuNyitZar()">☰ Menü</div>
+                <button id="profilBtn" onclick="profilBTN_Click()">Profil</button>
+                <button id="ujCsevegesBtn" onclick="ujCsevegesBtn_Click()">Új csevegés</button>
+                <ul id="szobak">
+                    
+                </ul>
+            </div>
+            <div id="uzenetek">
+                <div id="szobaFejlec">
+                    <div id="menuBomb" onclick="menuNyitZar()">☰ Menü</div>
+                    <div id="szobaNevKiir"></div>
+                    <button id="tagHozzaadasaBtn" onclick="tagHozzaadasa()">Tag hozzáadása</button>
+                </div>
+                <div id="messages"></div>
+                <div id="kuldesSor">
+                    <input type="text" id="input" placeholder="Üzenet..." />
+                    <button id="sendBtn">Küldés</button>
+                    <button id="connectBtn" style="display: none;">Csatlakozás</button>
+                </div>
+                
+                <br><br>
+            </div>
+        </div>
+        
+    </div>
+    <div id="regisztracio">
+        <input type="text" value="" placeholder="Megjelenített név" id="regisztracio_nev" />
+        <input type="password" value="" placeholder="Jelszó" id="regisztracio_jelszo1" />
+        <input type="password" value="" placeholder="Jelszó mégegyszer" id="regisztracio_jelszo2" />
+        <button onclick="regisztracioBTN_Click()">Regisztráció</button>
+    </div>
+    <div id="bejelentkezes">
+        <input type="number" placeholder="Felhasználó ID" id="bejelentkezes_felhID" />
+        <input type="password" placeholder="Jelszó" id="bejelentkezes_jelszo1" />
+        <button onclick="bejelentkezesBTNok_Click()">Bejelentkezés</button>
+    </div>
+    <div id="betoltes" style="display: none; align-items: center; justify-content: center; width: 100%; height: 100%;">
+        <div>Betöltés...</div>
+    </div>
+    <div id="szobaLetrehozas" style="display: none; align-items: center; justify-content: center; width: 100%; height: 100%;">
+        <input type="text" placeholder="Szoba neve" id="szobaNevBe" />
+        <button onclick="ujSzoba()">Létrehozás</button>
+        <button onclick="megse()">Mégse</button>
+    </div>
+    <div id="tagHozzaadas" style="display: none; align-items: center; justify-content: center; width: 100%; height: 100%;">
+        <input id="ujFelhIdBe" type="number" placeholder="Új tag felhasználó ID-je">
+        <input id="ujFelhSJelszo" type="password" placeholder="Saját jelszó">
+        <button onclick="tagHozzaadasaBtn_Click()">Hozzáadás</button>
+        <button onclick="megse()">Mégse</button>
+    </div>
+    <div id="prof" style="display: none;">
+        <button style="width: 100px; margin-bottom: 20px;" onclick="{
+                document.getElementById('prof').style.display = 'none';
+                document.getElementById('betoltve').style.display = 'block';
+                document.getElementById('profJelszo').value = '';
+                document.getElementById('profUjJelszo').value = '';
+                document.getElementById('profUjJelszoMeg').value = '';
+        }">Vissza</button>
+        <div style="display: flex; flex-direction: column; gap: 5px; padding: 20px; font-size: 14px;">
+            
+            <div id="nevKi"><p style="display: inline;">Megjelenített név: </p><input id="megjNevKiirBe" type="text" name="" id=""></div>
+            <div id="felhIdki"><p>Felhasználó ID:</p></div>
+            <input id="profJelszo" type="password" placeholder="Jelszó">
+            <input id="profUjJelszo" type="password" placeholder="Új jelszó (nem közelező)">
+            <input id="profUjJelszoMeg" type="password" placeholder="Új jelszó megerősítése">
+            <button id="profMent" onclick="profMent_Click()">Mentés</button>
+            <button id="kijelentkezes" onclick="kijelentkezes()">Kijelentkezés</button>
+        </div>
+        
+    </div>
+
+
+    
+
+    <script src="app.js"></script>
+    <!--script src="teszt.js"></script-->
+</body>
+</html>
