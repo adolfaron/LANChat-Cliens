@@ -230,4 +230,9 @@ body {
   #profilBtn{
     width: 15%;
   }
+  #prof{
+    width: 100%;
+    font-size: 17px;
+    border-radius: 5px;
+  }
 }
