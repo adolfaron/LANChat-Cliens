@@ -277,9 +277,11 @@ async function bejelentkezes(jelszo, felhid) {
     document.getElementById("bejelentkezes").style.display = "none";
     document.getElementById("betoltes").style.display = "flex";
     let beenged = await GS_Get(`bejelentkezes_${felhid}_${jelszo}_${eszkozID}`);
-    if (beenged == "sikeres")
+    /*console.log(beenged)*/
+    if (beenged.split("_")[0] == "sikeres")
     {
         felhID = felhid;
+        megjNev = beenged.split("_")[1].toString();
         alert("Sikeres bejelentkezés!");
         Indit();
     }
@@ -288,12 +290,14 @@ async function bejelentkezes(jelszo, felhid) {
         document.getElementById("bejelentkezes").style.display = "flex";
         document.getElementById("bejelentkezes_felhID").value = felhid;
         document.getElementById("bejelentkezes_jelszo1").value = "";
+        document.getElementById("betoltes").style.display = "none"
         alert("Sikertelen bejelentkezés! Kérem ellenőrizze a megadott adatokat!");
 
     }
-    else if (beenged == "már van")
+    else if (beenged.split("_")[0] == "már van")
     {
         felhID = felhid;
+        megjNev = beenged.split("_")[1].toString();
         alert("Sikeres bejelentkezés!");
         Indit();
     }
@@ -511,7 +515,7 @@ async function kijelentkezes() {
     return;
     }
     document.getElementById("prof").style.display = "none";
-    document.getElementById("betoltes").style.display = "block";
+    document.getElementById("betoltes").style.display = "flex";
     localStorage.removeItem("webFelhId");
     let valasz = await GS_Get("kijelentkezes_"+eszkozID+"_"+felhID);
     if (valasz == "sikertelen kijelentkezés, nem tartalmazza")
